@@ -1,216 +1,59 @@
-/* style.css */
-body {
-    font-family: sans-serif;
-    margin-top: 20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    margin-left: 10px;
-    background-color: #181818; 
-    color: #e0e0e0; 
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Aimsenspov</title>
+</head>
+<body>
+    <div class="site-header">
+        <h1>Aimsenspov</h1>
+    </div>
 
-.site-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px; 
-}
+    <nav class="main-navigation">
+        <a href="#home" class="nav-button" id="btnHome">Home</a>
+        <a href="#sensitivity-finder" class="nav-button" id="btnSensConverter">Switch Sensitivity</a>
+        <a href="#crosshair" class="nav-button" id="btnCrosshairCode">Crosshair Code</a>
+        <a href="#aim-practice" class="nav-button" id="btnAimPractice">Aim Practice</a>
+        <a href="#language" class="nav-button" id="btnLanguageSettings">Language</a>
+    </nav>
 
-.site-header h1 {
-    margin: 0;
-    color: #ffffff; 
-    font-size: 2.5em; 
-}
+    <main id="page-content-container">
+        <section id="home-page" class="page-section">
+            <h2>Aimsenspov</h2>
+            </section>
 
-.main-navigation {
-    text-align: center;
-    margin-bottom: 30px;
-}
+        <section id="sensitivity-finder-page" class="page-section">
+            <div class="sensitivity-finder-container">
+                <h2>Switch Sensitivity</h2>
+                <div class="sens-input-area">
+                    <label for="initialSens">Start sensitivity:</label>
+                    <input type="number" id="initialSens" value="1.00" step="0.01" min="0.01">
+                    <button id="startSensFinderBtn">Start</button>
+                </div>
+                <div id="sensitivityInteractiveSteps">
+                    <p style='text-align:center; color:#777;'>Please press the Start button.</p>
+                </div>
+            </div>
+        </section>
 
-.main-navigation a.nav-button {
-    padding: 10px 18px;
-    font-size: 16px;
-    color: #e0e0e0; 
-    background-color: #4b4b4b; 
-    border: 1px solid #4b4b4b;   
-    border-radius: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    cursor: pointer;
-    text-decoration: none; 
-    display: inline-block; 
-    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-}
+        <section id="crosshair-page" class="page-section">
+            <h2>Crosshair Code</h2>
+            <p>This feature is currently under development.</p>
+        </section>
 
-.main-navigation a.nav-button:hover {
-    background-color: #4b4b4b; /* 사용자 지정: 호버 시 배경색 동일 */
-    color: #ffffff; /* 호버 시 텍스트 색상 변경 */
-}
+        <section id="aim-practice-page" class="page-section">
+            <h2>Aim Practice</h2>
+            <p>This feature is currently under development.</p>
+        </section>
 
-.main-navigation a.nav-button.active { 
-    background-color: #4b4b4b; /* 사용자 지정: 활성 시 배경색 동일 */
-    color: white;
-    font-weight: bold;
-    /* 활성 상태를 더 명확히 하려면 box-shadow 또는 다른 border 사용 고려 가능 */
-    /* 예: box-shadow: inset 0 0 0 2px #ffffff; */
-}
-
-.page-section {
-    display: none; 
-    padding: 20px; /* 사용자 지정: 모든 방향 패딩 */
-    border-top: 1px solid #333333; /* 중립적인 어두운 회색으로 변경 */
-}
-
-.page-section h2 {
-    color: #e8eaed;
-    text-align: center;
-    margin-bottom: 25px; /* 사용자 CSS에는 h2 margin-bottom: 20px 이었으나, 일관성을 위해 25px 유지 또는 20px로 통일 */
-    font-size: 24px; /* 페이지 제목 크기 */
-}
-.page-section p {
-    color: #bdc1c6;
-    text-align: center;
-    line-height: 1.6;
-    font-size: 16px;
-}
-
-.sensitivity-finder-container {
-    margin: 0 auto; 
-    padding: 25px;
-    border: 1px solid #333333; /* 사용자 CSS의 #454c5c 대신 중립적 회색으로 변경 */
-    border-radius: 8px;
-    background-color: #1f1f1f; 
-    max-width: 700px; 
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
-
-.sensitivity-finder-container h2 { 
-    font-size: 22px; /* 페이지 섹션 h2와 일관성 또는 개별 지정 */
-    margin-bottom: 25px;
-}
-
-.sens-input-area {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 25px;
-    gap: 10px; 
-}
-
-.sensitivity-finder-container label {
-    font-size: 16px;
-    color: #bdc1c6; 
-}
-
-.sensitivity-finder-container input[type="number"] {
-    padding: 8px 10px;
-    border: 1px solid #394150; /* 사용자 지정 값 */
-    border-radius: 4px;
-    background-color: #0e121c; /* 사용자 지정 값 */
-    color: #e8eaed; 
-    width: 100px; 
-    font-size: 16px;
-    text-align: center;
-}
-
-.sensitivity-finder-container button#startSensFinderBtn {
-    padding: 9px 18px;
-    background-color: #717171; /* 사용자 지정 값 */
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.2s;
-}
-
-.sensitivity-finder-container button#startSensFinderBtn:hover {
-    background-color: #4c4c4c; /* 사용자 지정 값 */
-}
-
-#sensitivityInteractiveSteps { 
-    margin-top: 20px;
-}
-
-.sens-step-display {
-    padding: 20px;
-    border: 1px dashed #606060; /* 사용자 지정 값 */
-    border-radius: 6px;
-    margin-top: 20px;
-    background-color: #292929; /* 사용자 지정 값 */
-    color: #bdc1c6; 
-}
-
-.sens-step-display h4 {
-    text-align: center;
-    color: #e5e5e5; /* 사용자 지정 값 */
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 18px;
-}
-
-.sens-step-display p {
-    text-align: center;
-    margin-bottom: 12px;
-    font-size: 16px;
-}
-
-.sens-step-display p strong { 
-    color: #e8eaed;
-    font-size: 1.1em;
-}
-
-.sens-options {
-    display: flex;
-    justify-content: center; 
-    gap: 25px; 
-    margin-top: 20px;
-}
-
-button.sens-choice-btn { 
-    padding: 10px 22px;
-    font-size: 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s, transform 0.1s;
-    font-weight: bold;
-    min-width: 140px; 
-}
-
-button.sens-choice-btn.lower { 
-    background-color: #a5a5a5; /* 사용자 지정 값 */
-    color: white;
-}
-button.sens-choice-btn.lower:hover {
-    background-color: #5d5d5d; /* 사용자 지정 값 */
-}
-
-button.sens-choice-btn.higher { 
-    background-color: #a5a5a5; /* 사용자 지정 값 */
-    color: white;
-}
-button.sens-choice-btn.higher:hover {
-    background-color: #5d5d5d; /* 사용자 지정 값 */
-}
-
-button.sens-choice-btn:active {
-    transform: scale(0.98); 
-}
-
-button#restartSensFinderBtn {
-    display: block; 
-    margin: 25px auto 0 auto; 
-    padding: 10px 25px;
-    background-color: #6c757d; /* 사용자 지정 값 */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: bold;
-}
-button#restartSensFinderBtn:hover {
-    background-color: #5a6268; /* 사용자 지정 값 */
-}
+        <section id="language-page" class="page-section">
+            <h2>Language Settings</h2>
+            <p>This feature is currently under development.</p>
+        </section>
+    </main>
+    
+    <script src="index.js"></script>
+</body>
+</html>
