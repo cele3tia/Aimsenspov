@@ -1,2 +1,0 @@
-# Aimsenspov
-Aimsenepov.site
