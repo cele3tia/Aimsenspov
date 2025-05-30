@@ -1,0 +1,90 @@
+/* css/_variables.css */
+:root { 
+    --bg-primary: #181818; 
+    --bg-secondary: #202020; 
+    --bg-tertiary: #292929; 
+    --bg-input: #1a1a1a; 
+
+    --text-primary: #e0e0e0; 
+    --text-secondary: #c0c0c0; 
+    --text-tertiary: #ffffff; 
+    --text-strong: #ffffff; 
+
+    --border-primary: #333333; 
+    --border-input: #404040; 
+    --border-dashed: #606060; 
+
+    --btn-nav-bg: #4b4b4b; 
+    --btn-nav-text: #e0e0e0; 
+    --btn-nav-hover-bg: #5d5d5d; 
+    --btn-nav-active-bg: #4b4b4b; 
+    --btn-nav-active-text: #ffffff;
+
+    --btn-primary-bg: #555555; 
+    --btn-primary-hover-bg: #666666; 
+
+    --btn-secondary-bg: #4a4a4a; 
+    --btn-secondary-hover-bg: #5a5a5a;
+
+    --btn-google-bg: #404040; 
+    --btn-google-hover-bg: #505050; 
+
+    --btn-guest-bg: #6c757d; 
+    --btn-guest-hover-bg: #5a6268;
+
+    --btn-lower-bg: #a5a5a5; 
+    --btn-lower-hover-bg: #5d5d5d;
+    --btn-higher-bg: #a5a5a5; 
+    --btn-higher-hover-bg: #5d5d5d;
+
+    --btn-restart-bg: #555555; 
+    --btn-restart-hover-bg: #444444;
+
+    --highlight-accent: #b0b0b0;
+    --error-color: #ff6b6b; 
+}
+
+body.light-mode { 
+    --bg-primary: #f0f2f5;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #e8e8e8;
+    --bg-input: #f8f8f8;
+
+    --text-primary: #333333;
+    --text-secondary: #555555;
+    --text-tertiary: #222222;
+    --text-strong: #000000;
+
+    --border-primary: #dddddd;
+    --border-input: #cccccc;
+    --border-dashed: #aaaaaa;
+
+    --btn-nav-bg: #eeeeee;
+    --btn-nav-text: #333333;
+    --btn-nav-hover-bg: #e0e0e0;
+    --btn-nav-active-bg: #dddddd;
+    --btn-nav-active-text: #000000;
+
+    --btn-primary-bg: #bbbbbb; 
+    --btn-primary-hover-bg: #aaaaaa;
+
+    --btn-secondary-bg: #bbbbbb; 
+    --btn-secondary-hover-bg: #aaaaaa;
+
+    --btn-google-bg: #cccccc; 
+    --btn-google-hover-bg: #bbbbbb; 
+
+    --btn-guest-bg: #cccccc;
+    --btn-guest-hover-bg: #bbbbbb;
+
+    --btn-lower-bg: #aaaaaa; 
+    --btn-lower-hover-bg: #999999;
+    --btn-higher-bg: #aaaaaa;
+    --btn-higher-hover-bg: #999999;
+
+    --btn-restart-bg: #dddddd;
+    --btn-restart-hover-bg: #cccccc;
+
+    --highlight-accent: #555555;
+    --error-color: #d9534f;
+}
