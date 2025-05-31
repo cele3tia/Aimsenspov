@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+    <title>Aimsenspov</title>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <a href="#home" class="site-logo">
+                Aimsenspov
+            </a>
+        </div>
+    </header>
+
+    <nav class="main-navigation">
+        <a href="#home" class="nav-button" id="btnHome">Home</a>
+        <a href="#sensitivity-finder" class="nav-button" id="btnSensConverter">Switch Sensitivity</a>
+        <a href="#crosshair" class="nav-button" id="btnCrosshairCode">Crosshair Code</a>
+        <a href="#aim-practice" class="nav-button" id="btnAimPractice">Aim Practice</a>
+        <a href="#language" class="nav-button" id="btnLanguageSettings">Language Settings</a>
+        <a href="#auth" class="nav-button" id="btnAuth">Login / Signup</a> 
+        <button class="nav-button" id="btnOpenThemeSelector">Select Theme</button> 
+    </nav>
+
+    <main id="page-content-container">
+        <section id="home-page" class="page-section">
+            <h2>Aimsenspov!</h2>
+            <p>Please select a feature from the menu above.</p>
+        </section>
+
+        <section id="sensitivity-finder-page" class="page-section">
+            <div class="sensitivity-finder-container">
+                <h2>Switch Sensitivity</h2>
+                <div class="sens-input-area">
+                    <label for="initialSens">Start sensitivity:</label>
+                    <input type="number" id="initialSens" value="1.00" step="0.01" min="0.01">
+                    <button id="startSensFinderBtn">Start</button>
+                </div>
+                <div id="sensitivityInteractiveSteps">
+                    <p style='text-align:center; color:var(--text-secondary);'>Please press the Start button.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="crosshair-page" class="page-section">
+            <h2>Crosshair Code</h2>
+            <p>This feature is currently under development.</p>
+        </section>
+
+        <section id="aim-practice-page" class="page-section">
+            <h2>Aim Practice</h2>
+            <p>This feature is currently under development.</p>
+        </section>
+
+        <section id="language-page" class="page-section">
+            <h2>Language Settings</h2>
+            <p>This feature is currently under development.</p>
+        </section>
+        
+        <section id="auth-page" class="page-section">
+            <div class="auth-container">
+                <h2>Account</h2>
+                
+                <div class="auth-status-display-area">
+                    <p id="authStatusMessage">Not logged in.</p>
+                    <button id="authLogoutBtn" class="auth-btn auth-btn-secondary" style="display:none;">Logout</button>
+                </div>
+
+                <div id="authFormsSection">
+                    <div class="auth-method-group">
+                        <h3>Email & Password</h3>
+                        <input type="email" id="emailInput" placeholder="Email address">
+                        <input type="password" id="passwordInput" placeholder="Password">
+                        <div class="auth-buttons-row">
+                            <button id="signUpEmailBtn" class="auth-btn auth-btn-primary">Sign Up</button> 
+                            <button id="signInEmailBtn" class="auth-btn auth-btn-secondary">Login</button>
+                        </div>
+                    </div>
+
+                    <div class="auth-divider">
+                        <span>OR</span>
+                    </div>
+
+                    <div class="auth-method-group">
+                        <h3>Quick Access</h3>
+                        <div class="auth-buttons-row quick-access-row"> 
+                            <button id="googleSignInBtn" class="auth-btn auth-btn-icon auth-btn-google">
+                                <img src="https://img.icons8.com/color/16/000000/google-logo.png" alt="Google icon">
+                                Sign In with Google
+                            </button>
+                            <button id="guestSignInBtn" class="auth-btn auth-btn-icon auth-btn-guest">
+                                <img src="https://img.icons8.com/ios-glyphs/16/ffffff/user--v1.png" alt="Guest icon">
+                                Continue as Guest
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <p id="authErrorMessage" class="auth-error-message"></p> 
+
+            </div>
+        </section>
+    </main>
+
+    <div id="themeSelectorPopup" class="theme-selector-popup">
+        <div class="theme-selector-content">
+            <h3>Select Theme</h3>
+            <div class="theme-options">
+                <button id="selectDarkTheme" class="theme-option-btn dark-mode-preview">Dark</button>
+                <button id="selectLightTheme" class="theme-option-btn light-mode-preview">Light</button>
+            </div>
+            <button id="closeThemeSelector" class="close-btn">Close</button>
+        </div>
+    </div>
+    
+    <script src="index.js" type="module"></script>
+</body>
+</html>
