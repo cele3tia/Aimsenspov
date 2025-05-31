@@ -1,0 +1,100 @@
+/* css/_variables.css */
+:root { 
+    /* 다크 모드 (기본) 색상 변수들 - 변경 없음 */
+    --bg-primary: #181818;                 /* 주 배경색 */
+    --bg-secondary: #202020;               /* 보조 배경색 (카드, 팝업 등) */
+    --bg-tertiary: #292929;                /* 삼차 배경색 (상태 표시, 포커스 등) */
+    --bg-input: #1a1a1a;                   /* 입력 필드 배경색 */
+
+    --text-primary: #e0e0e0;               /* 주 텍스트 색상 */
+    --text-secondary: #c0c0c0;             /* 보조 텍스트 색상 */
+    --text-tertiary: #ffffff;              /* 강조 텍스트 색상 (헤더, 제목 등) */
+    --text-strong: #ffffff;                /* 더 강한 텍스트 색상 */
+
+    --border-primary: #333333;             /* 주 테두리 색상 */
+    --border-input: #404040;               /* 입력 필드 테두리 색상 */
+    --border-dashed: #606060;              /* 점선 테두리 색상 */
+
+    --btn-nav-bg: #4b4b4b;                 /* 내비게이션 버튼 기본 배경 */
+    --btn-nav-text: #e0e0e0;               /* 내비게이션 버튼 기본 텍스트 */
+    --btn-nav-hover-bg: #5d5d5d;           /* 내비게이션 버튼 호버 배경 */
+    --btn-nav-active-bg: #4b4b4b;          /* 내비게이션 버튼 활성 배경 */
+    --btn-nav-active-text: #ffffff;        /* 내비게이션 버튼 활성 텍스트 */
+
+    --btn-primary-bg: #555555;             /* 주 버튼 배경 */
+    --btn-primary-hover-bg: #666666;       /* 주 버튼 호버 배경 */
+
+    --btn-secondary-bg: #4a4a4a;           /* 보조 버튼 배경 */
+    --btn-secondary-hover-bg: #5a5a5a;     /* 보조 버튼 호버 배경 */
+
+    --btn-google-bg: #404040;              /* Google 로그인 버튼 배경 */
+    --btn-google-hover-bg: #505050;        /* Google 로그인 버튼 호버 배경 */
+
+    --btn-guest-bg: #6c757d;               /* 게스트 로그인 버튼 배경 */
+    --btn-guest-hover-bg: #5a6268;         /* 게스트 로그인 버튼 호버 배경 */
+
+    --btn-lower-bg: #a5a5a5;               /* 감도 찾기 'Slower' 버튼 배경 */
+    --btn-lower-hover-bg: #5d5d5d;         /* 감도 찾기 'Slower' 버튼 호버 배경 */
+    --btn-higher-bg: #a5a5a5;              /* 감도 찾기 'Faster' 버튼 배경 */
+    --btn-higher-hover-bg: #5d5d5d;        /* 감도 찾기 'Faster' 버튼 호버 배경 */
+
+    --btn-restart-bg: #555555;             /* 재시작 버튼 배경 */
+    --btn-restart-hover-bg: #444444;       /* 재시작 버튼 호버 배경 */
+
+    --highlight-accent: #b0b0b0;           /* 강조 색상 */
+    --highlight-accent-rgb: 176, 176, 176; /* 강조 색상의 RGB 값 (rgba() 사용용) */
+    --error-color: #ff6b6b;                /* 오류 메시지 색상 */
+
+    --header-bg: #282828;                  /* 헤더 배경색 */
+    --header-text: #ffffff;                /* 헤더 텍스트 색상 */
+}
+
+html.light-mode { 
+    /* 라이트 모드 색상 변수들 - 화사하고 명쾌한 대비로 대폭 수정 */
+    --bg-primary: #f8f8f8;                 /* 주 배경색: 아주 밝은 회색 (전체 배경) */
+    --bg-secondary: #ffffff;               /* 보조 배경색: 순백색 (카드, 팝업, 모듈 배경) */
+    --bg-tertiary: #eeeeee;                /* 삼차 배경색: 옅은 회색 (구분선, 특정 요소 배경) */
+    --bg-input: #ffffff;                   /* 입력 필드 배경색: 흰색 */
+
+    --text-primary: #333333;               /* 주 텍스트 색상: 진한 회색 (선명한 가독성) */
+    --text-secondary: #666666;             /* 보조 텍스트 색상: 중간 회색 */
+    --text-tertiary: #111111;              /* 강조 텍스트 색상: 거의 검정 */
+    --text-strong: #000000;                /* 더 강한 텍스트 색상: 순검정 */
+
+    --border-primary: #dddddd;             /* 주 테두리 색상: 옅은 회색 (요소 구분) */
+    --border-input: #cccccc;               /* 입력 필드 테두리 색상: 중간 옅은 회색 */
+    --border-dashed: #aaaaaa;              /* 점선 테두리 색상: 중간 회색 */
+
+    --btn-nav-bg: #ffffff;                 /* 내비게이션 버튼 기본 배경: 흰색 */
+    --btn-nav-text: #555555;               /* 내비게이션 버튼 기본 텍스트: 중간 회색 */
+    --btn-nav-hover-bg: #e0e0e0;           /* 내비게이션 버튼 호버 배경: 옅은 회색 */
+    --btn-nav-active-bg: #cccccc;          /* 내비게이션 버튼 활성 배경: 중간 옅은 회색 */
+    --btn-nav-active-text: #000000;        /* 내비게이션 버튼 활성 텍스트: 순검정 */
+
+    --btn-primary-bg: #007bff;             /* 주 버튼 배경: 밝고 선명한 파란색 (클릭 유도) */
+    --btn-primary-hover-bg: #0056b3;       /* 주 버튼 호버 배경: 더 진한 파란색 */
+
+    --btn-secondary-bg: #e9ecef;           /* 보조 버튼 배경: 아주 옅은 회색 */
+    --btn-secondary-hover-bg: #dae0e5;     /* 보조 버튼 호버 배경: 더 진한 옅은 회색 */
+
+    --btn-google-bg: #ffffff;              /* Google 로그인 버튼 배경: 흰색 */
+    --btn-google-hover-bg: #f0f0f0;        /* Google 로그인 버튼 호버 배경: 아주 옅은 회색 */
+
+    --btn-guest-bg: #e9ecef;               /* 게스트 로그인 버튼 배경: 아주 옅은 회색 */
+    --btn-guest-hover-bg: #dae0e5;         /* 게스트 로그인 버튼 호버 배경: 더 진한 옅은 회색 */
+
+    --btn-lower-bg: #e9ecef;               /* 감도 찾기 'Slower' 버튼 배경: 아주 옅은 회색 */
+    --btn-lower-hover-bg: #dae0e5;         /* 감도 찾기 'Slower' 버튼 호버 배경 */
+    --btn-higher-bg: #e9ecef;              /* 감도 찾기 'Faster' 버튼 배경: 아주 옅은 회색 */
+    --btn-higher-hover-bg: #dae0e5;        /* 감도 찾기 'Faster' 버튼 호버 배경 */
+
+    --btn-restart-bg: #cccccc;             /* 재시작 버튼 배경: 중간 옅은 회색 */
+    --btn-restart-hover-bg: #bbbbbb;       /* 재시작 버튼 호버 배경: 더 진한 회색 */
+
+    --highlight-accent: #007bff;           /* 강조 색상: 파란색 */
+    --highlight-accent-rgb: 0, 123, 255;   /* 강조 색상의 RGB 값 */
+    --error-color: #dc3545;                /* 오류 메시지 색상: 빨간색 */
+
+    --header-bg: #ffffff;                  /* 헤더 배경색: 흰색 */
+    --header-text: #111111;                /* 헤더 텍스트 색상: 거의 검정 */
+}

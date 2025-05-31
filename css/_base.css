@@ -1,0 +1,8 @@
+/* css/_base.css */
+body {
+    font-family: sans-serif;
+    margin: 20px 10px 20px 10px;    
+    background-color: var(--bg-primary); /* 배경색을 변수로 설정 */
+    color: var(--text-primary);     /* 텍스트색도 변수로 설정 */
+    transition: background-color 0.3s ease, color 0.3s ease; /* 전환 효과 유지 */
+}
