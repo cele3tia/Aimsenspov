@@ -70,45 +70,81 @@ export function setupAuthUI() {
         }
     });
 
+    // reCAPTCHA 토큰을 가져와 인증 함수를 실행하는 헬퍼 함수
+    async function executeRecaptcha(action, authFunction) {
+        authErrorMessage.style.display = 'none';
+        try {
+            // grecaptcha가 로드되었는지 확인
+            if (typeof grecaptcha === 'undefined' || !grecaptcha.enterprise) {
+                displayAuthError("reCAPTCHA is not loaded. Please try again or check your internet connection.");
+                console.error("reCAPTCHA object not found or not ready.");
+                return;
+            }
+
+            const token = await grecaptcha.enterprise.execute('6LcxDVErAAAAAGmSPgWZ_2OmmquE219HA_6abe9G', { action: action });
+            console.log(`reCAPTCHA token for action ${action}:`, token);
+            
+            // TODO: 여기서 백엔드 서버로 토큰을 보내 검증해야 합니다.
+            // 현재 프론트엔드 프로젝트에서는 이 토큰을 검증할 서버가 없습니다.
+            // 실제 구현에서는 이 토큰을 서버로 보내고, 서버가 Google reCAPTCHA API와 통신하여
+            // 토큰을 검증한 후, 결과에 따라 Firebase 인증을 진행해야 합니다.
+            
+            // 임시로 토큰이 있으면 인증 진행 (보안 취약)
+            if (token) {
+                await authFunction();
+            } else {
+                displayAuthError("reCAPTCHA verification failed. Please try again.");
+            }
+
+        } catch (error) {
+            displayAuthError(`reCAPTCHA Error: ${error.message}`);
+            console.error("reCAPTCHA execution error:", error);
+        }
+    }
+
     signUpEmailBtn.addEventListener('click', () => {
         const email = emailInput.value;
         const password = passwordInput.value;
-        authErrorMessage.style.display = 'none'; 
-        if (password.length < 6) {
-            displayAuthError("Password must be at least 6 characters long.");
-            return;
-        }
-        createUserWithEmailAndPassword(auth, email, password)
-            .catch((error) => {
-                displayAuthError(`Registration Error: ${error.message}`);
-            });
+        executeRecaptcha('signup', async () => {
+            if (password.length < 6) {
+                displayAuthError("Password must be at least 6 characters long.");
+                return;
+            }
+            await createUserWithEmailAndPassword(auth, email, password)
+                .catch((error) => {
+                    displayAuthError(`Registration Error: ${error.message}`);
+                });
+        });
     });
 
     signInEmailBtn.addEventListener('click', () => {
         const email = emailInput.value;
         const password = passwordInput.value;
-        authErrorMessage.style.display = 'none'; 
-        signInWithEmailAndPassword(auth, email, password)
-            .catch((error) => {
-                displayAuthError(`Login Error: ${error.message}`);
-            });
+        executeRecaptcha('login', async () => {
+            await signInWithEmailAndPassword(auth, email, password)
+                .catch((error) => {
+                    displayAuthError(`Login Error: ${error.message}`);
+                });
+        });
     });
 
     googleSignInBtn.addEventListener('click', () => {
         const provider = new GoogleAuthProvider();
-        authErrorMessage.style.display = 'none'; 
-        signInWithPopup(auth, provider)
-            .catch((error) => {
-                displayAuthError(`Google Login Error: ${error.message}`);
-            });
+        executeRecaptcha('login_google', async () => {
+            await signInWithPopup(auth, provider)
+                .catch((error) => {
+                    displayAuthError(`Google Login Error: ${error.message}`);
+                });
+        });
     });
 
-    guestSignInBtn.addEventListener('click', () => { 
-        authErrorMessage.style.display = 'none'; 
-        signInAnonymously(auth)
-            .catch((error) => {
-                displayAuthError(`Guest Login Error: ${error.message}`);
-            });
+    guestSignInBtn.addEventListener('click', () => {
+        executeRecaptcha('login_guest', async () => {
+            await signInAnonymously(auth)
+                .catch((error) => {
+                    displayAuthError(`Guest Login Error: ${error.message}`);
+                });
+        });
     });
 
     authLogoutBtn.addEventListener('click', () => {
