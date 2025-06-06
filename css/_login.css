@@ -1,39 +1,41 @@
-/* css/_login.css (Modern & Minimalist Redesign) */
+/* css/_login.css (Modern & Minimalist Redesign - 이미지 기반 수정) */
 
 .auth-container {
-    margin: 60px auto; /* 상하 마진 증가, 중앙 정렬 */
+    margin: 60px auto; 
     padding: 40px;
-    border: none; /* 테두리 제거 */
-    border-radius: 12px; /* 모서리 더 둥글게 */
-    background-color: var(--bg-secondary); /* 배경색 유지 */
-    max-width: 480px; /* 좌우 폭을 이전 400px에서 480px로 넓힘 */
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6); /* 그림자 더 깊고 부드럽게 */
+    border: none; 
+    border-radius: 12px; 
+    background-color: var(--bg-secondary); 
+    max-width: 480px; 
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6); 
     text-align: center;
-    transition: all 0.4s ease-in-out; /* 모든 전환 효과 부드럽게 */
+    transition: all 0.4s ease-in-out; 
+    border: 1px solid var(--border-primary); /* 테두리 추가 */
 }
 
 .auth-container:hover {
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8); /* 호버 시 그림자 강화 */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8); 
 }
 
 .auth-container h2 {
     color: var(--text-tertiary);
-    font-size: 2em; /* 글자 크기 약간 키움 */
-    margin-bottom: 35px; /* 여백 증가 */
-    font-weight: 600; /* 약간 더 굵게 */
+    font-size: 2em; 
+    margin-bottom: 35px; 
+    font-weight: 600; 
 }
 
 .auth-status-display-area {
     padding: 15px 20px;
-    background-color: var(--bg-tertiary);
-    border-radius: 8px; /* 모서리 둥글게 */
+    background-color: var(--bg-tertiary); /* 삼차 배경색 사용 */
+    border-radius: 8px; 
     margin-bottom: 30px;
     color: var(--text-primary);
     font-size: 0.95em;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2); /* 안쪽 그림자로 깊이감 부여 */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2); 
+    border: 1px solid var(--border-primary); /* 테두리 추가 */
 }
 
 .auth-status-display-area p {
@@ -52,121 +54,115 @@
     color: var(--text-secondary);
     font-size: 1.1em;
     margin-bottom: 25px;
-    font-weight: 500; /* 일반적인 두께 */
-    position: relative; /* 구분선과 정렬을 위해 */
+    font-weight: 500; 
+    position: relative; 
 }
 
-/* 새로운 디자인 요소: h3 제목 아래에 얇은 선 추가 */
 .auth-method-group h3::after {
     content: '';
     display: block;
-    width: 60px; /* 선의 너비 */
-    height: 2px; /* 선의 두께 */
-    background-color: var(--highlight-accent); /* 강조 색상 적용 */
-    margin: 10px auto 0; /* 제목 아래 중앙에 위치 */
+    width: 60px; 
+    height: 2px; 
+    background-color: var(--highlight-accent); 
+    margin: 10px auto 0; 
     border-radius: 1px;
 }
 
-
 .auth-container input[type="email"],
 .auth-container input[type="password"] {
-    width: calc(100% - 30px); /* 패딩 고려 */
-    padding: 15px; /* 패딩 증가 */
-    margin-bottom: 20px; /* 여백 증가 */
+    width: calc(100% - 30px); 
+    padding: 15px; 
+    margin-bottom: 20px; 
     border: 1px solid var(--border-input);
-    border-radius: 8px; /* 모서리 둥글게 */
-    background-color: var(--bg-input);
+    border-radius: 8px; 
+    background-color: var(--bg-input); /* 입력 필드 배경색 사용 */
     color: var(--text-primary);
     font-size: 1em;
     outline: none;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* 안쪽 그림자 */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); 
     transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .auth-container input[type="email"]:focus,
 .auth-container input[type="password"]:focus {
     border-color: var(--highlight-accent);
-    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.2), 0 0 8px rgba(var(--highlight-accent-rgb), 0.3); /* 강조 테두리 및 은은한 그림자 */
-    background-color: var(--bg-tertiary); /* 포커스 시 배경색 변경 */
+    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.2), 0 0 8px rgba(var(--highlight-accent-rgb), 0.3); 
+    background-color: var(--bg-tertiary); 
 }
-/* RGB 변수 추가 필요: --highlight-accent-rgb: 176, 176, 176; (_variables.css에 추가) */
 
 .auth-buttons-row {
     display: flex;
-    gap: 15px; /* 버튼 간 간격 증가 */
+    gap: 15px; 
     justify-content: center;
-    margin-top: 25px; /* 여백 증가 */
-    flex-wrap: wrap; /* 작은 화면에서 버튼이 줄바꿈 되도록 */
+    margin-top: 25px; 
+    flex-wrap: wrap; 
 }
 
-/* Quick Access 버튼들을 위한 추가 스타일 */
 .auth-buttons-row.quick-access-row {
-    justify-content: center; /* Quick Access 버튼들도 중앙에 모이도록 */
+    justify-content: center;
+    gap: 15px;
 }
 
 .auth-btn {
-    padding: 15px 30px; /* 패딩 증가 */
+    padding: 15px 30px; 
     border: none;
-    border-radius: 8px; /* 모서리 둥글게 */
+    border-radius: 8px; 
     cursor: pointer;
     font-size: 1em;
     font-weight: bold;
-    letter-spacing: 0.5px; /* 글자 간격 약간 넓힘 */
+    letter-spacing: 0.5px; 
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    flex-grow: 1; /* 이메일/비밀번호 버튼에만 적용되도록 HTML에 별도 클래스 부여하거나 제거 */
-    max-width: 220px; /* 버튼의 최대 너비를 조금 더 넓힘 */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* 버튼 그림자 */
+    flex-grow: 1;
+    max-width: 220px; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3); 
 }
 
 .auth-btn:hover {
-    transform: translateY(-2px); /* 호버 시 약간 위로 */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.4); /* 그림자 강화 */
+    transform: translateY(-2px); 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4); 
 }
 
 .auth-btn:active {
-    transform: translateY(0); /* 클릭 시 원위치 */
-    box-shadow: 0 1px 5px rgba(0,0,0,0.2); /* 클릭 시 그림자 약화 */
+    transform: translateY(0); 
+    box-shadow: 0 1px 5px rgba(0,0,0,0.2); 
 }
 
-/* Primary Button */
 .auth-btn-primary {
-    background-color: var(--btn-primary-bg);
+    background-color: var(--btn-primary-bg); /* 블루 악센트 */
     color: white;
 }
 .auth-btn-primary:hover {
     background-color: var(--btn-primary-hover-bg);
 }
 
-/* Secondary Button */
 .auth-btn-secondary {
-    background-color: var(--btn-secondary-bg);
-    color: var(--text-primary); /* 회색 계열 텍스트로 변경 */
+    background-color: var(--btn-secondary-bg); /* 삼차 배경색 */
+    color: var(--text-primary); 
 }
 .auth-btn-secondary:hover {
     background-color: var(--btn-secondary-hover-bg);
-    color: var(--text-tertiary); /* 호버 시 텍스트 더 밝게 */
+    color: var(--text-tertiary); 
 }
 
-/* Icon Buttons (Google, Guest) */
 .auth-btn-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px; /* 아이콘과 텍스트 간격 증가 */
-    margin-top: 0; /* 이메일/비밀번호 버튼과의 마진을 없애 통합된 디자인으로 */
-    width: auto; /* width: 100% 대신 auto로 설정하여 내용에 맞게 조절 */
-    flex-basis: auto; /* flex-basis를 auto로 설정하여 유연하게 폭 조절 */
-    min-width: 180px; /* 아이콘 버튼의 최소 너비 설정 */
-    flex-grow: 0; /* 아이콘 버튼이 무작정 늘어나지 않도록 */
+    gap: 12px; 
+    margin-top: 0; 
+    width: auto; 
+    flex-basis: auto; 
+    min-width: 180px; 
+    flex-grow: 0; 
 }
 .auth-btn-icon img {
-    width: 20px; /* 아이콘 크기 약간 키움 */
+    width: 20px; 
     height: 20px;
-    filter: none; /* 기본 이미지 필터 유지 */
+    filter: none; 
 }
 
 .auth-btn-google {
-    background-color: var(--btn-google-bg);
+    background-color: var(--btn-google-bg); /* 삼차 배경색 */
     color: white;
 }
 .auth-btn-google:hover {
@@ -174,7 +170,7 @@
 }
 
 .auth-btn-guest {
-    background-color: var(--btn-guest-bg);
+    background-color: var(--btn-guest-bg); /* 삼차 배경색 */
     color: white;
 }
 .auth-btn-guest:hover {
@@ -183,7 +179,7 @@
 
 .auth-divider {
     color: var(--text-secondary);
-    margin: 40px 0; /* 여백 증가 */
+    margin: 40px 0; 
     position: relative;
     font-size: 0.9em;
     font-weight: 500;
@@ -193,20 +189,53 @@
     content: '';
     position: absolute;
     top: 50%;
-    width: 42%; /* 선 너비 약간 늘림 */
+    width: 42%; 
     height: 1px;
     background-color: var(--border-primary);
 }
 .auth-divider span {
-    background-color: var(--bg-secondary);
-    padding: 0 15px; /* 패딩 증가 */
+    background-color: var(--bg-secondary); /* 보조 배경색 사용 */
+    padding: 0 15px; 
 }
 
 .auth-error-message {
     color: var(--error-color);
     font-size: 0.9em;
-    margin-top: 25px; /* 여백 증가 */
+    margin-top: 25px; 
     text-align: center;
     min-height: 20px;
     font-weight: 500;
+}
+
+/* 모바일 반응형 스타일 (기존 코드 유지) */
+@media (max-width: 600px) {
+    .auth-container {
+        margin: 20px auto;
+        padding: 25px;
+        max-width: 90%;
+    }
+    .auth-container h2 {
+        font-size: 1.8em;
+        margin-bottom: 25px;
+    }
+    .auth-container input[type="email"],
+    .auth-container input[type="password"] {
+        width: calc(100% - 20px);
+        padding: 12px;
+        margin-bottom: 15px;
+    }
+    .auth-buttons-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .auth-btn {
+        width: 100%;
+        max-width: none;
+        padding: 12px 20px;
+        font-size: 0.95em;
+    }
+    .auth-btn-icon {
+        flex-direction: row;
+        gap: 8px;
+    }
 }

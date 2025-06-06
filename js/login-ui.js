@@ -74,7 +74,6 @@ export function setupAuthUI() {
     async function executeRecaptcha(action, authFunction) {
         authErrorMessage.style.display = 'none';
         try {
-            // grecaptcha가 로드되었는지 확인
             if (typeof grecaptcha === 'undefined' || !grecaptcha.enterprise) {
                 displayAuthError("reCAPTCHA is not loaded. Please try again or check your internet connection.");
                 console.error("reCAPTCHA object not found or not ready.");
@@ -84,7 +83,7 @@ export function setupAuthUI() {
             const token = await grecaptcha.enterprise.execute('6LcxDVErAAAAAGmSPgWZ_2OmmquE219HA_6abe9G', { action: action });
             console.log(`reCAPTCHA token for action ${action}:`, token);
             
-            // TODO: 여기서 백엔드 서버로 토큰을 보내 검증해야 합니다.
+            // TODO: 여기서 백엔드 서버로 토큰을 보내 검증해야 합니다. (이 부분은 사용자님께서 직접 구현 필요)
             // 현재 프론트엔드 프로젝트에서는 이 토큰을 검증할 서버가 없습니다.
             // 실제 구현에서는 이 토큰을 서버로 보내고, 서버가 Google reCAPTCHA API와 통신하여
             // 토큰을 검증한 후, 결과에 따라 Firebase 인증을 진행해야 합니다.

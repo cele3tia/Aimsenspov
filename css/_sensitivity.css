@@ -1,10 +1,10 @@
-/* css/_sensitivity.css */
+/* css/_sensitivity.css (이미지 기반 수정) */
 .sensitivity-finder-container {
     margin: 0 auto; 
     padding: 25px;
     border: 1px solid var(--border-primary); 
-    border-radius: 8px;
-    background-color: var(--bg-secondary); 
+    border-radius: 12px; /* 둥근 모서리 */
+    background-color: var(--bg-secondary); /* 보조 배경색 사용 */
     max-width: 700px; 
     box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
     transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
@@ -33,7 +33,7 @@
 .sensitivity-finder-container input[type="number"] {
     padding: 9px 12px;
     border: 1px solid var(--border-input); 
-    border-radius: 4px;
+    border-radius: 8px; /* 둥근 모서리 */
     background-color: var(--bg-input); 
     color: var(--text-primary); 
     font-size: 16px;
@@ -43,18 +43,20 @@
 }
 .sensitivity-finder-container input[type="number"]:focus {
     border-color: var(--highlight-accent);
+    box-shadow: 0 0 0 2px rgba(var(--highlight-accent-rgb), 0.2); /* 포커스 시 그림자 */
 }
 
 .sensitivity-finder-container button#startSensFinderBtn {
     padding: 10px 20px;
-    background-color: var(--btn-primary-bg); 
+    background-color: var(--btn-primary-bg); /* 블루 악센트 */
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px; /* 둥근 모서리 */
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
     transition: background-color 0.2s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* 그림자 */
 }
 
 .sensitivity-finder-container button#startSensFinderBtn:hover {
@@ -68,7 +70,7 @@
 .sens-step-display {
     padding: 20px;
     border: 1px dashed var(--border-dashed); 
-    border-radius: 6px;
+    border-radius: 10px; /* 둥근 모서리 */
     margin-top: 20px;
     background-color: var(--bg-secondary); 
     color: var(--text-secondary); 
@@ -107,26 +109,28 @@ button.sens-choice-btn {
     padding: 10px 22px;
     font-size: 15px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px; /* 둥근 모서리 */
     cursor: pointer;
     font-weight: bold;
     min-width: 140px; 
     transition: background-color 0.2s, transform 0.1s, color 0.2s ease;
-    color: white; 
+    color: var(--text-primary); /* 텍스트 색상 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 그림자 */
+    background-color: var(--btn-secondary-bg); /* 보조 버튼 배경색 */
 }
 
 button.sens-choice-btn.lower { 
-    background-color: var(--btn-lower-bg); 
+    background-color: var(--btn-secondary-bg); 
 }
 button.sens-choice-btn.lower:hover {
-    background-color: var(--btn-lower-hover-bg);
+    background-color: var(--btn-secondary-hover-bg);
 }
 
 button.sens-choice-btn.higher { 
-    background-color: var(--btn-higher-bg); 
+    background-color: var(--btn-secondary-bg); 
 }
 button.sens-choice-btn.higher:hover {
-    background-color: var(--btn-higher-hover-bg);
+    background-color: var(--btn-secondary-hover-bg);
 }
 
 button.sens-choice-btn:active {
@@ -140,12 +144,43 @@ button#restartSensFinderBtn {
     background-color: var(--btn-restart-bg); 
     color: var(--text-primary); 
     border: none;
-    border-radius: 5px;
+    border-radius: 8px; /* 둥근 모서리 */
     cursor: pointer;
     font-size: 15px;
     font-weight: bold;
     transition: background-color 0.2s, color 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 그림자 */
 }
 button#restartSensFinderBtn:hover {
     background-color: var(--btn-restart-hover-bg);
+}
+
+/* 모바일 반응형 스타일 (기존 코드 유지) */
+@media (max-width: 600px) {
+    .sensitivity-finder-container {
+        padding: 15px;
+        max-width: 95%;
+    }
+    .sensitivity-finder-container h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    .sens-input-area {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .sens-input-area label,
+    .sens-input-area input,
+    .sens-input-area button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .sens-options {
+        flex-direction: column;
+        gap: 10px;
+    }
+    button.sens-choice-btn {
+        min-width: unset;
+        width: 100%;
+    }
 }
