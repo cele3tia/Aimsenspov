@@ -1,4 +1,5 @@
-// js/login-ui.js 
+// js/login-ui.js - Version 20250606_FinalFix
+
 import { auth } from './firebase-init.js'; 
 
 import {
@@ -28,6 +29,7 @@ export function setupAuthUI() {
     const recaptchaDiv = document.querySelector('.g-recaptcha');
     const recaptchaSiteKey = recaptchaDiv ? recaptchaDiv.getAttribute('data-sitekey') : null; // data-sitekey를 동적으로 가져옴
 
+    // 필수 요소 확인 시 recaptchaDiv와 recaptchaSiteKey도 포함
     if (!authStatusMessage || !authLogoutBtn || !authFormsSection || !emailInput || !passwordInput || 
         !signUpEmailBtn || !signInEmailBtn || !googleSignInBtn || !guestSignInBtn || !authErrorMessage || !recaptchaDiv || !recaptchaSiteKey) { 
         console.error("Error: One or more required authentication UI elements or reCAPTCHA elements not found in the HTML. Please check your HTML structure or reCAPTCHA site key.");
@@ -84,11 +86,11 @@ export function setupAuthUI() {
                 return;
             }
 
-            // sitekey를 동적으로 가져오도록 수정
+            // data-sitekey 값을 사용하여 reCAPTCHA 실행 (하드코딩된 이전 키 제거됨)
             const token = await grecaptcha.enterprise.execute(recaptchaSiteKey, { action: action });
             console.log(`reCAPTCHA token for action ${action}:`, token);
             
-            // TODO: 여기서 백엔드 서버로 토큰을 보내 검증해야 합니다.
+            // TODO: 여기서 백엔드 서버로 토큰을 보내 검증해야 합니다. (이 부분은 사용자님께서 직접 구현 필요)
             // 현재 프론트엔드 프로젝트에서는 이 토큰을 검증할 서버가 없습니다.
             // 실제 구현에서는 이 토큰을 서버로 보내고, 서버가 Google reCAPTCHA API와 통신하여
             // 토큰을 검증한 후, 결과에 따라 Firebase 인증을 진행해야 합니다.
