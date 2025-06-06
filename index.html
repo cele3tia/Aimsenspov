@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css"> 
-    <title>Aimsenspov</title>
+    <title data-lang-key="app_title">Aimsenspov</title>
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9543272564767938"
      crossorigin="anonymous"></script>
@@ -14,117 +14,140 @@
 <body>
     <header class="site-header">
         <div class="header-content">
-            <a href="#home" class="site-logo">
-                Aimsenspov
-            </a>
+            <a href="#home" class="site-logo" data-lang-key="app_title"></a>
         </div>
     </header>
 
-    <nav class="main-navigation">
-        <a href="#home" class="nav-button" id="btnHome">Home</a>
-        <a href="#sensitivity-finder" class="nav-button" id="btnSensConverter">Switch Sensitivity</a>
-        <a href="#crosshair" class="nav-button" id="btnCrosshairCode">Crosshair Code</a>
-        <a href="#aim-practice" class="nav-button" id="btnAimPractice">Aim Practice</a>
-        <a href="#language" class="nav-button" id="btnLanguageSettings">Language Settings</a>
-        <a href="#auth" class="nav-button" id="btnAuth">Login / Signup</a> 
-        <a class="nav-button" id="btnOpenThemeSelector">Select Theme</a> 
-    </nav>
-
-    <main id="page-content-container">
-        <section id="home-page" class="page-section">
-            <h2>Aimsenspov!</h2>
-            <p>Please select a feature from the menu above.</p>
-        </section>
-
-        <section id="sensitivity-finder-page" class="page-section">
-            <div class="sensitivity-finder-container">
-                <h2>Switch Sensitivity</h2>
-                <div class="sens-input-area">
-                    <label for="initialSens">Start sensitivity:</label>
-                    <input type="number" id="initialSens" value="1.00" step="0.01" min="0.01">
-                    <button id="startSensFinderBtn">Start</button>
-                </div>
-                <div id="sensitivityInteractiveSteps">
-                    <p style='text-align:center; color:var(--text-secondary);'>Please press the Start button.</p>
-                </div>
+    <div class="main-container">
+        <nav class="main-navigation">
+            <div class="nav-links-group">
+                <a href="#home" class="nav-button" id="btnHome" data-lang-key="btn_home"></a>
+                <a href="#sensitivity-finder" class="nav-button" id="btnSensConverter" data-lang-key="btn_sens_converter"></a>
+                <a href="#crosshair" class="nav-button" id="btnCrosshairCode" data-lang-key="btn_crosshair_code"></a>
+                <a href="#aim-practice" class="nav-button" id="btnAimPractice" data-lang-key="btn_aim_practice"></a>
             </div>
-        </section>
+            
+            <div class="nav-links-group">
+                <a href="#language" class="nav-button" id="btnLanguageSettings" data-lang-key="btn_language_settings"></a>
+                <a href="#auth" class="nav-button" id="btnAuth" data-lang-key="btn_login_signup"></a> 
+                <a class="nav-button" id="btnOpenThemeSelector" data-lang-key="btn_select_theme"></a> 
+            </div>
+        </nav>
 
-        <section id="crosshair-page" class="page-section">
-            <h2>Crosshair Code</h2>
-            <p>This feature is currently under development.</p>
-        </section>
+        <main id="page-content-container">
+            <section id="home-page" class="page-section">
+                <h2 data-lang-key="app_title"></h2>
+                <p data-lang-key="text_select_feature"></p>
+            </section>
 
-        <section id="aim-practice-page" class="page-section">
-            <h2>Aim Practice</h2>
-            <p>This feature is currently under development.</p>
-        </section>
-
-        <section id="language-page" class="page-section">
-            <h2>Language Settings</h2>
-            <p>This feature is currently under development.</p>
-        </section>
-        
-        <section id="auth-page" class="page-section">
-            <div class="auth-container">
-                <h2>Account</h2>
-                
-                <div class="auth-status-display-area">
-                    <p id="authStatusMessage">Not logged in.</p>
-                    <button id="authLogoutBtn" class="auth-btn auth-btn-secondary" style="display:none;">Logout</button>
+            <section id="sensitivity-finder-page" class="page-section">
+                <div class="sensitivity-finder-container">
+                    <h2 data-lang-key="sens_finder_title"></h2>
+                    <div class="sens-input-area">
+                        <label for="initialSens" data-lang-key="sens_finder_initial_label"></label>
+                        <input type="number" id="initialSens" value="1.00" step="0.01" min="0.01">
+                        <button id="startSensFinderBtn" data-lang-key="sens_finder_start_btn"></button>
+                    </div>
+                    <div id="sensitivityInteractiveSteps">
+                        <p style='text-align:center; color:var(--text-secondary);' data-lang-key="sens_finder_start_hint"></p>
+                        </div>
                 </div>
+            </section>
 
-                <div id="authFormsSection">
-                    <div class="auth-method-group">
-                        <h3>Email & Password</h3>
-                        <input type="email" id="emailInput" placeholder="Email address">
-                        <input type="password" id="passwordInput" placeholder="Password">
-                        <div class="auth-buttons-row">
-                            <button id="signUpEmailBtn" class="auth-btn auth-btn-primary">Sign Up</button> 
-                            <button id="signInEmailBtn" class="auth-btn auth-btn-secondary">Login</button>
+            <section id="crosshair-page" class="page-section">
+                <h2 data-lang-key="btn_crosshair_code"></h2>
+                <p data-lang-key="text_under_development"></p>
+            </section>
+
+            <section id="aim-practice-page" class="page-section">
+                <h2 data-lang-key="btn_aim_practice"></h2>
+                <p data-lang-key="text_under_development"></p>
+            </section>
+
+            <section id="language-page" class="page-section">
+                <h2 data-lang-key="lang_settings_title"></h2>
+                <p data-lang-key="lang_settings_select_hint"></p>
+                <div style="text-align: center; margin-top: 30px;">
+                    <button class="lang-setting-btn" id="btnOpenLanguageSelector" data-lang-key="lang_settings_open_selector_btn"></button>
+                </div>
+            </section>
+            
+            <section id="auth-page" class="page-section">
+                <div class="auth-container">
+                    <h2 data-lang-key="auth_account_title"></h2>
+                    
+                    <div class="auth-status-display-area">
+                        <p id="authStatusMessage" data-lang-key="auth_status_not_logged_in"></p>
+                        <button id="authLogoutBtn" class="auth-btn auth-btn-secondary" style="display:none;" data-lang-key="auth_logout_btn"></button>
+                    </div>
+
+                    <div id="authFormsSection">
+                        <div class="auth-method-group">
+                            <h3 data-lang-key="auth_email_password_title"></h3>
+                            <input type="email" id="emailInput" data-lang-key="auth_email_placeholder">
+                            <input type="password" id="passwordInput" data-lang-key="auth_password_placeholder">
+                            <div class="auth-buttons-row">
+                                <button id="signUpEmailBtn" class="auth-btn auth-btn-primary" data-lang-key="auth_signup_btn"></button> 
+                                <button id="signInEmailBtn" class="auth-btn auth-btn-secondary" data-lang-key="auth_login_btn"></button>
+                            </div>
+                        </div>
+
+                        <div class="g-recaptcha" data-sitekey="6LfnqVcrAAAAAOgzxNzxTWh_fDxWZYiPrrMvPLpb" data-action="LOGIN" data-size="invisible" style="margin-top: 20px;"></div>
+                        <p style="text-align: center; font-size: 0.8em; color: var(--text-secondary); margin-top: 10px;">
+                            <span data-lang-key="auth_recaptcha_privacy_prefix"></span>
+                            <a href="https://policies.google.com/privacy" style="color: var(--highlight-accent); text-decoration: none;" data-lang-key="auth_recaptcha_privacy_link"></a>
+                            <span data-lang-key="auth_recaptcha_and"></span>
+                            <a href="https://policies.google.com/terms" style="color: var(--highlight-accent); text-decoration: none;" data-lang-key="auth_recaptcha_terms_link"></a>
+                            <span data-lang-key="auth_recaptcha_suffix"></span>
+                        </p>
+
+
+                        <div class="auth-divider">
+                            <span data-lang-key="auth_or_divider"></span>
+                        </div>
+
+                        <div class="auth-method-group">
+                            <h3 data-lang-key="auth_quick_access_title"></h3>
+                            <div class="auth-buttons-row quick-access-row"> 
+                                <button id="googleSignInBtn" class="auth-btn auth-btn-icon auth-btn-google" data-lang-key="auth_google_signin_btn">
+                                    <img src="https://img.icons8.com/color/16/000000/google-logo.png" alt="Google icon">
+                                </button>
+                                <button id="guestSignInBtn" class="auth-btn auth-btn-icon auth-btn-guest" data-lang-key="auth_guest_signin_btn">
+                                    <img src="https://img.icons8.com/ios-glyphs/16/ffffff/user--v1.png" alt="Guest icon">
+                                </button>
+                            </div>
                         </div>
                     </div>
+                    
+                    <p id="authErrorMessage" class="auth-error-message"></p> 
 
-                    <div class="g-recaptcha" data-sitekey="6LcxDVErAAAAAGmSPgWZ_2OmmquE219HA_6abe9G" data-action="LOGIN" data-size="invisible" style="margin-top: 20px;"></div>
-                    <p style="text-align: center; font-size: 0.8em; color: var(--text-secondary); margin-top: 10px;">This site is protected by reCAPTCHA Enterprise and the Google <a href="https://policies.google.com/privacy" style="color: var(--highlight-accent); text-decoration: none;">Privacy Policy</a> and <a href="https://policies.google.com/terms" style="color: var(--highlight-accent); text-decoration: none;">Terms of Service</a> apply.</p>
-
-
-                    <div class="auth-divider">
-                        <span>OR</span>
-                    </div>
-
-                    <div class="auth-method-group">
-                        <h3>Quick Access</h3>
-                        <div class="auth-buttons-row quick-access-row"> 
-                            <button id="googleSignInBtn" class="auth-btn auth-btn-icon auth-btn-google">
-                                <img src="https://img.icons8.com/color/16/000000/google-logo.png" alt="Google icon">
-                                Sign In with Google
-                            </button>
-                            <button id="guestSignInBtn" class="auth-btn auth-btn-icon auth-btn-guest">
-                                <img src="https://img.icons8.com/ios-glyphs/16/ffffff/user--v1.png" alt="Guest icon">
-                                Continue as Guest
-                            </button>
-                        </div>
-                    </div>
                 </div>
-                
-                <p id="authErrorMessage" class="auth-error-message"></p> 
-
-            </div>
-        </section>
-    </main>
+            </section>
+        </main>
+    </div>
 
     <div id="themeSelectorPopup" class="theme-selector-popup">
         <div class="theme-selector-content">
-            <h3>Select Theme</h3>
+            <h3 data-lang-key="theme_selector_title"></h3>
             <div class="theme-options">
-                <button id="selectDarkTheme" class="theme-option-btn dark-mode-preview">Dark</button>
-                <button id="selectLightTheme" class="theme-option-btn light-mode-preview">Light</button>
+                <button id="selectDarkTheme" class="theme-option-btn dark-mode-preview" data-lang-key="theme_option_dark"></button>
+                <button id="selectLightTheme" class="theme-option-btn light-mode-preview" data-lang-key="theme_option_light"></button>
             </div>
-            <button id="closeThemeSelector" class="close-btn">Close</button>
+            <button id="closeThemeSelector" class="close-btn" data-lang-key="btn_close"></button>
         </div>
     </div>
     
+    <div id="languageSelectorPopup" class="language-selector-popup">
+        <div class="language-selector-content">
+            <h3 data-lang-key="lang_selector_title"></h3>
+            <div class="language-options">
+                <button id="selectLangEn" class="language-option-btn" data-lang-code="en" data-lang-key="lang_option_en"></button>
+                <button id="selectLangKo" class="language-option-btn" data-lang-code="ko" data-lang-key="lang_option_ko"></button>
+            </div>
+            <button id="closeLanguageSelector" class="close-btn" data-lang-key="btn_close"></button>
+        </div>
+    </div>
+
     <script src="index.js" type="module"></script>
 </body>
 </html>

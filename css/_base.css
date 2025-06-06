@@ -10,12 +10,13 @@ html {
     color: var(--text-primary); 
     transition: background-color 0.3s ease, color 0.3s ease; 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* 예시 폰트, 원하시는 폰트로 변경 가능 */
+    font-size: 16px; /* 기본 폰트 크기 조정 (이전 15px 정도에서 16px로) */
 }
 
 body {
-    margin: 20px 10px 20px 10px; 
+    margin: 0; /* body의 기본 margin을 0으로 설정하여 전체 화면을 차지하게 함 */
     line-height: 1.6;
-    -webkit-font-smoothing: antialiased; /* 폰트 부드럽게 */
+    -webkit-font-smoothing: antialiased; 
     text-rendering: optimizeLegibility;
 }
 
@@ -25,36 +26,41 @@ button, input[type="text"], input[type="number"], input[type="email"], input[typ
     color: var(--text-primary);
     border: 1px solid var(--border-input);
     border-radius: 8px; /* 둥근 모서리 */
-    padding: 10px 15px;
-    font-size: 1em;
+    padding: 12px 18px; /* 패딩 증가 (이전 10px 15px에서) */
+    font-size: 1.05em; /* 폰트 크기 약간 증가 */
     outline: none;
     transition: all 0.2s ease-in-out;
 }
 
 button:hover {
     cursor: pointer;
-    filter: brightness(1.1); /* 약간 밝아지는 효과 */
+    filter: brightness(1.1); 
 }
 
 button:active {
-    transform: scale(0.98); /* 클릭 시 약간 축소 */
+    transform: scale(0.98); 
 }
 
 input:focus {
     border-color: var(--highlight-accent);
-    box-shadow: 0 0 0 2px rgba(var(--highlight-accent-rgb), 0.2); /* 포커스 시 은은한 그림자 */
+    box-shadow: 0 0 0 2px rgba(var(--highlight-accent-rgb), 0.2); 
 }
 
 p {
     margin-bottom: 1em;
+    font-size: 1em; /* 기본 p 태그 폰트 크기 */
 }
 
 h1, h2, h3, h4, h5, h6 {
     color: var(--text-tertiary);
     margin-top: 0;
-    margin-bottom: 0.5em;
-    font-weight: 600; /* 제목 굵기 */
+    margin-bottom: 0.6em; /* 마진 증가 */
+    font-weight: 600; 
 }
+
+h1 { font-size: 2.5em; } /* 기본 h1 크기 */
+h2 { font-size: 2em; }   /* 기본 h2 크기 */
+h3 { font-size: 1.5em; } /* 기본 h3 크기 */
 
 a {
     color: var(--highlight-accent);

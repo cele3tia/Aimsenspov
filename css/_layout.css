@@ -1,20 +1,26 @@
-/* css/_layout.css */
+/* css/_layout.css (전체 레이아웃 및 내비게이션 크기 조정) */
+
+body {
+    margin: 0; 
+}
 
 .site-header {
     background-color: var(--header-bg);
-    padding: 15px 20px;
+    padding: 20px 30px; /* 헤더 패딩 증가 (이전 15px 25px에서) */
     border-bottom: 1px solid var(--border-primary);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 25px; /* 헤더 하단 여백 증가 */
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 12px; /* 헤더도 둥근 모서리 적용 */
+    border-radius: 0;
+    width: 100%;
+    margin: 0; 
 }
 
 .site-header .header-content {
-    max-width: 1200px;
+    max-width: 1300px; /* 헤더 콘텐츠 최대 너비 증가 (이전 1200px에서) */
     width: 100%;
     display: flex;
     justify-content: center;
@@ -22,7 +28,7 @@
 }
 
 .site-header .site-logo {
-    font-size: 2.2em;
+    font-size: 2.5em; /* 로고 폰트 크기 증가 (이전 2.2em에서) */
     font-weight: 700;
     color: var(--header-text);
     text-decoration: none;
@@ -33,116 +39,196 @@
     color: var(--highlight-accent);
 }
 
-
-.main-navigation {
-    text-align: center;
-    margin-bottom: 30px;
-    padding: 15px; /* 내부 패딩 */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* 그림자 강화 */
-    background-color: var(--bg-secondary); /* 보조 배경색 사용 */
-    border-radius: 12px; /* 모서리 더 둥글게 */
+/* 메인 컨테이너: 사이드바와 메인 콘텐츠를 나란히 배치 */
+.main-container {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px; /* 버튼들 사이의 간격 */
-    border: 1px solid var(--border-primary); /* 테두리 추가 */
+    gap: 25px; /* 사이드바와 메인 콘텐츠 사이 간격 증가 (이전 20px에서) */
+    max-width: 1300px; /* 전체 최대 너비 증가 (이전 1240px에서) */
+    margin: 25px auto; /* 상하 여백 증가 */
+    padding: 0 25px; /* 양옆 패딩 증가 */
+}
+
+/* 왼쪽 사이드바 내비게이션 */
+.main-navigation {
+    flex-shrink: 0; 
+    width: 280px; /* 사이드바 고정 너비 증가 (이전 240px에서) */
+    padding: 25px; /* 패딩 증가 */
+    background-color: var(--bg-secondary); 
+    border-radius: 12px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    border: 1px solid var(--border-primary);
+    display: flex; 
+    flex-direction: column;
+    gap: 15px; 
+    height: fit-content; 
+    position: sticky; 
+    top: 25px; /* 상단에서부터의 여백 조정 */
+}
+
+.nav-links-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* 메뉴 항목 간격 증가 (이전 5px에서) */
+    padding-bottom: 20px; /* 그룹 하단 패딩 증가 */
+    border-bottom: 1px solid var(--border-primary); 
+}
+
+.nav-links-group:last-child {
+    border-bottom: none; 
+    padding-bottom: 0;
 }
 
 .main-navigation a.nav-button,
-.main-navigation button.nav-button { /* button 태그도 nav-button 스타일에 포함 */
-    padding: 10px 18px;
-    font-size: 16px;
+.main-navigation button.nav-button { 
+    display: flex; 
+    align-items: center;
+    padding: 14px 18px; /* 버튼 패딩 증가 (이전 12px 15px에서) */
+    font-size: 1.05em; /* 폰트 크기 증가 */
     color: var(--btn-nav-text); 
-    background-color: var(--btn-nav-bg); 
-    border: 1px solid var(--btn-nav-bg);  
-    border-radius: 8px; /* 둥근 모서리 */
+    background-color: transparent; 
+    border: none; 
+    border-radius: 8px; 
     cursor: pointer;
     text-decoration: none; 
-    display: inline-block; 
-    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, transform 0.1s ease-out;
-    min-width: 120px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 그림자 */
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.1s ease-out;
+    text-align: left; 
+    position: relative; 
+    overflow: hidden; 
 }
 
 .main-navigation a.nav-button:hover,
 .main-navigation button.nav-button:hover {
     background-color: var(--btn-nav-hover-bg); 
     color: var(--btn-nav-active-text); 
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transform: none; 
+    box-shadow: none; 
 }
 
-.main-navigation a.nav-button.active { 
-    background-color: var(--btn-nav-active-bg); /* 활성 상태 배경색 (블루 악센트) */
-    color: var(--btn-nav-active-text); 
+/* 활성 상태 (선택된 메뉴 항목) */
+.main-navigation a.nav-button.active,
+.main-navigation button.nav-button.active { 
+    background-color: var(--btn-nav-active-bg); 
+    color: var(--btn-nav-active-text);          
     font-weight: bold;
-    border-color: var(--btn-nav-active-bg); /* 활성 상태 테두리도 배경색과 동일하게 */
-    box-shadow: 0 0 0 2px rgba(var(--highlight-accent-rgb), 0.5); /* 활성 상태 그림자 */
-    transform: translateY(0);
+    box-shadow: none;
+    border: none;
+}
+
+/* 활성 상태 옆에 파란색 인디케이터 추가 */
+.main-navigation a.nav-button.active::before,
+.main-navigation button.nav-button.active::before { 
+    content: '';
+    position: absolute;
+    left: 0; 
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px; 
+    height: 80%; 
+    background-color: var(--highlight-accent); 
+    border-radius: 2px; 
+}
+
+/* 호버 시 활성 상태의 배경색이 변경되지 않도록 명시 */
+.main-navigation a.nav-button.active:hover,
+.main-navigation button.nav-button.active:hover {
+    background-color: var(--btn-nav-active-bg); 
+    color: var(--btn-nav-active-text);
+}
+
+
+/* 메인 콘텐츠 영역 */
+main {
+    flex-grow: 1; 
+    padding-bottom: 30px; 
 }
 
 .page-section {
     display: none; 
-    padding: 25px; /* 패딩 증가 */
-    border-top: 1px solid var(--border-primary); 
-    background-color: var(--bg-secondary); /* 배경색 적용 */
-    border-radius: 12px; /* 둥근 모서리 */
-    margin-bottom: 30px; /* 섹션 하단 여백 */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* 그림자 */
+    padding: 30px; /* 패딩 증가 (이전 25px에서) */
+    background-color: var(--bg-secondary); 
+    border-radius: 12px; 
+    margin-bottom: 25px; /* 하단 여백 증가 */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+    border: 1px solid var(--border-primary); 
+}
+
+.page-section:last-child {
+    margin-bottom: 0;
 }
 
 .page-section h2 {
-    color: var(--text-tertiary);
-    text-align: center;
-    margin-bottom: 25px; 
-    font-size: 24px;
-    transition: color 0.3s ease;
+    font-size: 2em; /* 크기 증가 (이전 24px에서) */
+    margin-bottom: 30px; /* 마진 증가 */
 }
 .page-section p {
-    color: var(--text-secondary);
-    text-align: center;
-    line-height: 1.6;
-    font-size: 16px;
-    transition: color 0.3s ease;
+    font-size: 1.05em; /* 폰트 크기 증가 */
+    line-height: 1.7; /* 줄 간격 약간 증가 */
 }
 
-/* 모바일 반응형 스타일 (기존 코드 유지) */
+/* 모바일 반응형 스타일 */
 @media (max-width: 768px) {
     body {
-        margin: 10px;
+        margin: 0; 
     }
     .site-header {
-        padding: 10px 15px;
+        width: 100%; 
+        margin: 0;
+        padding: 15px 20px; /* 모바일 헤더 패딩 조정 */
     }
-    .site-header .site-logo {
-        font-size: 1.8em;
+    .main-container {
+        flex-direction: column; 
+        gap: 15px;
+        padding: 15px 10px; 
+        margin: 0 auto; 
     }
     .main-navigation {
-        padding: 10px;
-        gap: 5px;
+        width: 100%; 
+        position: static; 
+        height: auto;
+        padding: 15px;
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        justify-content: center; 
+        gap: 10px; 
+    }
+    .nav-links-group {
+        gap: 10px;
     }
     .main-navigation a.nav-button,
     .main-navigation button.nav-button {
-        font-size: 14px;
-        padding: 8px 12px;
+        flex-grow: 1; 
         min-width: unset;
-        flex-basis: auto;
-        flex-grow: 1;
+        font-size: 15px; /* 모바일 버튼 폰트 크기 조정 */
+        padding: 10px 15px; /* 모바일 버튼 패딩 조정 */
+    }
+    .main-navigation a.nav-button.active::before,
+    .main-navigation button.nav-button.active::before {
+        width: 100%; 
+        height: 4px; 
+        left: 0;
+        bottom: 0;
+        top: auto;
+        transform: none;
     }
     .page-section {
-        padding: 15px;
+        padding: 20px; /* 모바일 섹션 패딩 조정 */
+        margin-bottom: 15px;
     }
     .page-section h2 {
-        font-size: 20px;
-        margin-bottom: 15px;
+        font-size: 1.8em; /* 모바일 섹션 제목 크기 조정 */
+        margin-bottom: 20px;
+    }
+    .page-section p {
+        font-size: 1em; /* 모바일 섹션 폰트 크기 조정 */
     }
 }
 
 @media (max-width: 480px) {
+    /* 더 작은 모바일 화면에서 필요 시 추가 조정 */
     .main-navigation a.nav-button,
     .main-navigation button.nav-button {
-        flex-basis: calc(50% - 10px);
-        margin: 5px 0;
+        flex-basis: calc(50% - 5px); /* 2열로 배치 */
+        font-size: 14px;
+        padding: 8px 10px;
     }
 }

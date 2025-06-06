@@ -1,53 +1,55 @@
 /* css/_variables.css */
 :root { 
-    /* 새로운 다크 모드 색상 변수들 (이미지 기반) */
-    --bg-primary: #1a1d26;             
-    --bg-secondary: #232630;             
-    --bg-tertiary: #2c303a;              
-    --bg-input: #232630;                 
+    /* 새로운 다크 모드 색상 변수들 (이미지 기반 - 더 세밀하게 조정) */
+    --bg-primary: #1a1d26;                 /* 주 배경색 (메인 배경 - 아주 미세한 푸른빛의 다크 그레이) */
+    --bg-secondary: #232630;               /* 보조 배경색 (카드, 패널, 팝업 배경 - 주 배경보다 살짝 밝음) */
+    --bg-tertiary: #2c303a;                /* 삼차 배경색 (활성/포커스, 일부 입력 필드 배경 - 더 밝고 명확함) */
+    --bg-input: var(--bg-secondary);       /* 입력 필드 배경색 (보조 배경과 동일) */
 
-    --text-primary: #e0e0e0;           
-    --text-secondary: #a0a0a0;           
-    --text-tertiary: #ffffff;           
-    --text-strong: #ffffff;              
+    --text-primary: #e0e0e0;               /* 주 텍스트 색상 (밝은 회색) */
+    --text-secondary: #a0a0a0;             /* 보조 텍스트 색상 (중간 회색, 라벨) */
+    --text-tertiary: #ffffff;              /* 강조 텍스트 색상 (순백색, 제목) */
+    --text-strong: #ffffff;
 
-    --border-primary: #333642;          
-    --border-input: #444754;            
-    --border-dashed: #55596b;            
+    --border-primary: #333642;             /* 주 테두리 색상 (어두운 회색 - 은은하게 요소 구분) */
+    --border-input: #444754;               /* 입력 필드 테두리 색상 (약간 더 밝은 어두운 회색) */
+    --border-dashed: #55596b;              /* 점선 테두리 색상 */
 
-    --btn-nav-bg: #2c303a;                
-    --btn-nav-text: #e0e0e0;               
-    --btn-nav-hover-bg: #3b404d;           
-    --btn-nav-active-bg: #3b82f6;       
-    --btn-nav-active-text: #ffffff;       
+    --btn-nav-bg: var(--bg-secondary);     /* 내비게이션 버튼 기본 배경 (패널과 동일) */
+    --btn-nav-text: var(--text-primary);   /* 내비게이션 버튼 기본 텍스트 */
+    --btn-nav-hover-bg: var(--bg-tertiary); /* 내비게이션 버튼 호버 배경 */
+    --btn-nav-active-bg: #383b4a;          /* 내비게이션 버튼 활성 배경 (이미지 기반, bg-tertiary보다 미세하게 다름) */
+    --btn-nav-active-text: #ffffff;        /* 내비게이션 버튼 활성 텍스트 */
 
-    --btn-primary-bg: #3b82f6;             
-    --btn-primary-hover-bg: #2563eb;       
+    --btn-primary-bg: #3b82f6;             /* 주 버튼 배경 (블루 악센트) */
+    --btn-primary-hover-bg: #2563eb;       /* 주 버튼 호버 배경 */
 
-    --btn-secondary-bg: #2c303a;          
-    --btn-secondary-hover-bg: #3b404d;   
+    --btn-secondary-bg: var(--bg-tertiary); /* 보조 버튼 배경 (삼차 배경색) */
+    --btn-secondary-hover-bg: #3b404d;     /* 보조 버튼 호버 배경 */
 
-    --btn-google-bg: #2c303a;             
-    --btn-google-hover-bg: #3b404d;     
-    --btn-guest-bg: #2c303a;             
-    --btn-guest-hover-bg: #3b404d;       
+    --btn-google-bg: var(--bg-tertiary);   /* Google 로그인 버튼 배경 */
+    --btn-google-hover-bg: #3b404d;        /* Google 로그인 버튼 호버 배경 */
 
-    --btn-lower-bg: #2c303a;              
-    --btn-lower-hover-bg: #3b404d;        
-    --btn-higher-bg: #2c303a;             
-    --btn-higher-hover-bg: #3b404d;       
+    --btn-guest-bg: var(--bg-tertiary);    /* 게스트 로그인 버튼 배경 */
+    --btn-guest-hover-bg: #3b404d;         /* 게스트 로그인 버튼 호버 배경 */
 
-    --btn-restart-bg: #2c303a;           
-    --btn-restart-hover-bg: #3b404d;      
+    --btn-lower-bg: var(--bg-tertiary);    /* 감도 찾기 'Slower' 버튼 배경 */
+    --btn-lower-hover-bg: #3b404d;         /* 감도 찾기 'Slower' 버튼 호버 배경 */
+    --btn-higher-bg: var(--bg-tertiary);   /* 감도 찾기 'Faster' 버튼 배경 */
+    --btn-higher-hover-bg: #3b404d;        /* 감도 찾기 'Faster' 버튼 호버 배경 */
 
-    --highlight-accent: #3b82f6;           
-    --highlight-accent-rgb: 59, 130, 246;  
-    --error-color: #ef4444;               
+    --btn-restart-bg: var(--bg-tertiary);  /* 재시작 버튼 배경 */
+    --btn-restart-hover-bg: #3b404d;       /* 재시작 버튼 호버 배경 */
 
-    --header-bg: #1a1d26;                 
-    --header-text: #ffffff; 
+    --highlight-accent: #3b82f6;           /* 강조 색상 (블루 악센트) */
+    --highlight-accent-rgb: 59, 130, 246;  /* 강조 색상의 RGB 값 */
+    --error-color: #ef4444;                /* 오류 메시지 색상 */
+
+    --header-bg: var(--bg-primary);        /* 헤더 배경색 (주 배경색과 동일) */
+    --header-text: #ffffff;                /* 헤더 텍스트 색상 */
 }
 
+/* 라이트 모드 색상 변수들은 이전 단계에서 제공된 코드와 동일합니다. */
 html.light-mode { 
     --bg-primary: #f2f2f7;                 
     --bg-secondary: #ffffff;               

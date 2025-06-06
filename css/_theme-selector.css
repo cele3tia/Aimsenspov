@@ -1,4 +1,4 @@
-/* css/_theme-selector.css (이미지 기반 수정) */
+/* css/_theme-selector.css (크기 조정) */
 
 .theme-selector-popup {
     display: none; 
@@ -16,11 +16,11 @@
 
 .theme-selector-content {
     background-color: var(--bg-secondary); 
-    padding: 30px;
+    padding: 40px; /* 패딩 증가 (이전 30px에서) */
     border-radius: 12px; 
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); 
     text-align: center;
-    max-width: 400px; 
+    max-width: 450px; /* 최대 너비 증가 (이전 400px에서) */
     width: 90%;
     transform: scale(0.95); 
     animation: fadeInScale 0.3s forwards ease-out; 
@@ -40,37 +40,37 @@
 
 .theme-selector-content h3 {
     color: var(--text-tertiary);
-    margin-bottom: 25px;
-    font-size: 1.6em; 
+    margin-bottom: 30px; /* 마진 증가 */
+    font-size: 1.8em; /* 폰트 크기 증가 (이전 1.6em에서) */
     font-weight: 600; 
 }
 
 .theme-options {
     display: flex;
     justify-content: center;
-    gap: 15px; 
-    margin-bottom: 30px;
+    gap: 20px; /* 간격 증가 (이전 15px에서) */
+    margin-bottom: 35px; /* 마진 증가 */
 }
 
 .theme-option-btn {
-    padding: 12px 25px;
-    border: 1px solid var(--border-primary); /* 새로운 테두리 변수 사용 */
-    border-radius: 8px; /* 둥근 모서리 */
+    padding: 14px 30px; /* 패딩 증가 (이전 12px 25px에서) */
+    border: 1px solid var(--border-primary); 
+    border-radius: 8px; 
     cursor: pointer;
-    font-size: 1em;
+    font-size: 1.05em; /* 폰트 크기 증가 */
     font-weight: bold;
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, transform 0.1s ease-out, box-shadow 0.2s ease;
     flex: 1; 
-    max-width: 150px;
+    max-width: 180px; /* 최대 너비 증가 (이전 150px에서) */
     text-align: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
     color: var(--text-primary); 
-    background-color: var(--bg-input); /* 입력 필드 배경색과 유사하게 */
+    background-color: var(--bg-input); 
 }
 
 .theme-option-btn:hover {
-    background-color: var(--bg-tertiary); /* 호버 시 삼차 배경색 */
-    color: var(--text-tertiary); /* 호버 시 텍스트 더 밝게 */
+    background-color: var(--bg-tertiary); 
+    color: var(--text-tertiary); 
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
@@ -84,19 +84,19 @@
 }
 
 .close-btn {
-    background-color: var(--btn-secondary-bg); /* 보조 버튼 배경색 사용 */
+    background-color: var(--btn-secondary-bg); 
     color: var(--text-primary);
-    padding: 15px 30px; 
+    padding: 16px 35px; /* 패딩 증가 (이전 15px 30px에서) */
     border: none;
     border-radius: 8px; 
     cursor: pointer;
-    font-size: 1em;
+    font-size: 1.05em; /* 폰트 크기 증가 */
     font-weight: bold;
     letter-spacing: 0.5px;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     display: inline-block; 
-    margin-top: 15px; 
+    margin-top: 20px; /* 마진 증가 */
 }
 
 .close-btn:hover {
